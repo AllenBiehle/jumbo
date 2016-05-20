@@ -1,0 +1,50 @@
+1. Install homebrew:
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)”
+
+2. Install graphviz:
+brew install graphviz
+
+3. Alias the dot command:
+alias doit="/usr/local/bin/dot -T png -O"
+
+4. Create a simple graphviz document:
+Cat > test.dot
+
+graph { 
+		a -- b; 
+		b -- c; 
+		a -- c; 
+		d -- c; 
+		e -- c; 
+		e -- a; 
+	} 
+
+Ctrl-d
+
+5. Create the png of the graph:
+doit test.dot
+
+
+Now, for more automation:
+$ cat alwaysdoit.sh
+#!/bin/bash
+
+IMAGETYPE=png
+
+if [[ -e $1 ]]; then
+  echo looking for $1
+  while ((1)); do
+    if [ "$1" -nt "${1}.${IMAGETYPE}" ]; then
+      echo "updating image"
+      /usr/bin/dot -T $IMAGETYPE -O $1
+    fi
+    sleep 1
+  done
+else
+  echo Usage: $0 file.dot
+  echo The monitored file must exist
+fi;
+
+The script might generate the file twice because of timing issues, but who cares…
+
+$ bash alwaysdoit.sh test.dot
