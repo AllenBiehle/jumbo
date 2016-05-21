@@ -1,0 +1,46 @@
+== Option 1 ==
+
+
+    Use Ctrl+V to enter visual block mode
+    Move Up/Downto select the columns of text in the lines you want to comment.
+    Then hit Shift+i and type the text you want to insert.
+    Then hit Esc, wait 1 second and the inserted text will appear on every line.
+
+== Option 2 ==
+This replaces the beginning of each line with "//":
+
+:%s!^!//!
+
+This replaces the beginning of each selected line (use visual mode to select) with "//":
+
+:'<,'>s!^!//!
+
+== Option 3 ==
+
+:s/search/replace/g
+
+Replaces all occurrences of 'search' with 'replace' for current line, 'g' is short for 'global'
+
+This command will replace each occurrence of 'search' with 'replace' for the current line only. The % is used to search over the whole file. To confirm each replacement interactively append a 'c' for confirm:
+
+:%s/search/replace/c
+
+Interactive confirm replacing 'search' with 'replace' for the entire file
+
+Instead of the % character you can use a line number range (note that the '^' character is a special search character for the start of line):
+
+:14,20s/^/#/
+
+Inserts a '#' character at the start of lines 14-20
+
+If you want to use another comment character (like //) then change your command delimiter:
+
+:14,20s!^!//!
+
+Inserts a '//' character sequence at the start of lines 14-20
+
+Or you can always just escape the // characters like:
+
+:14,20s/^/\/\//
+
+Inserts a '//' character sequence at the start of lines 14-20
