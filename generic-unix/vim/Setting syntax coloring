@@ -1,0 +1,7 @@
+:set syntax=javascript
+:set syntax=php
+
+Alternatively if the extension causes an undesired coloring, switch off coloring with
+
+:set syntax=off
+

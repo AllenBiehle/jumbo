@@ -1,0 +1,21 @@
+var a=10:
+// the if checks if it's true or false. 
+if (a > 5) {
+	a = a * 2;
+
+}
+
+/*this expression only happens if there. The if expects a true or false. If it isn't there, it converts. 
+A boolean value is the true or false value. The ruels for how this happens are falsy values. 0, -0, Nan, 
+"", false, null, undefined are falsy values.  
+*/
+
+if (a) {
+	a = a * 2;
+}
+
+
+// about void, everything after it become undefined. 
+void 42
+
+

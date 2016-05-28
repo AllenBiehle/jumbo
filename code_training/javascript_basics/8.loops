@@ -1,0 +1,38 @@
+if (a) { .. }
+
+while (a) { .. }
+
+// a discussion about loops. The while statement means that while something is true keep doing it, or while something isn't true don't do it. 
+// first, this is a initialization expression. Then, the second, is the conditional or test expression. The third and final is the update.  
+for(a = 5; a < 10; a = a + 1) {..}
+for(a = 5; a < 10; a = a++) {..}
+for(a = 5; a < 10; a = a + 1 ) {console.log(a)};
+// we wait for when to stop the loop. Stopping the loop is when a gets to big. In for loops, these are optional. 
+
+
+for (;;) { } 
+// the above loop will run forever. It's because the conditional will never fail. This doesn't run because the conditional is always true. A loop runs until something is false. Its natural state is to run forever. 
+
+while (true) {
+
+}
+
+// for while, we need an initalization, then a test, and then a update. 
+
+a = 5;
+while (true) {
+	if (a >= 0) {
+		break;
+	}
+	console.log(a);
+	a = a + 1;
+}
+
+
+
+
+
+
+
+
+

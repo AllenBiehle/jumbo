@@ -1,0 +1,4 @@
+
+
+# copy from line 1 through 20 to the current line or last line in the editor. Specify a line by replacing the dot with a line number. 
+:1,20 co .

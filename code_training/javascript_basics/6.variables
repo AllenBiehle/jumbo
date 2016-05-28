@@ -1,0 +1,49 @@
+var a = 42;
+a = 42;
+
+// assigning to variables informally declaried is bad. It should be done before you use it. 
+
+//putting statemnts together in a curley brace is a block. 
+
+
+{
+	var a = 42;
+	foo(a / 2);
+
+}
+// blocks show up with statements usually. such as the if statement. 
+
+if (a > 10) {
+	}
+
+//basically the block will get executed only if a is bigger than 10. we can do the interesting set of code below.
+
+
+var a = 42;
+
+while ( a > 10) {
+	a = 10;
+	foo(a / 2);
+}
+
+var c;
+
+// in the above, due to the while statement, it will only run the loop once, because we're setting a to 10 in the code of the while statement. 	
+
+// blocks can also happen if a function gets called. for example. 
+
+var a = 42;
+
+function ( a > 10) {
+	a = 10;
+	foo(a / 2);
+}
+
+
+// Declaring functions
+
+function foo() {}
+var bar = function() {}
+var bar = function baz() {}
+
+// in all three cases, the block is assocated iwth a function and the block will not run without the function. 
