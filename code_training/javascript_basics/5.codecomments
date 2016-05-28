@@ -1,0 +1,15 @@
+// 42 is the meaning of life
+
+
+
+
+
+var a = 42;
+
+/* 
+this is an example of comments
+spanning multiple lines
+again. 
+*/ 
+
+var b = 12;

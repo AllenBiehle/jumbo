@@ -1,0 +1,8 @@
+b = 21;
+a = b * 2;
+
+
+#statement practice
+a = b * 2 + foo(c * 3);
+
+

@@ -1,0 +1,31 @@
+"abc"[1] // "b" ;
+
+a = 42;
+
+console.log(a);
+
+alert(42);
+
+a = a / 2;
+
+#to convert to a string
+a = String(a);
+
+console.log(a);
+
+a = String(a);
+b = Number(a);
+
+# The above is explicit. The below is implicit. 
+
+a = 42;
+a = a / 2;
+
+#this implies turning it into a string
+a = a + "";
+console.log(a);
+
+var a = 42;
+const a = 42;
+
+In the above, a can never be changed. 

@@ -1,0 +1,9 @@
+alert("Hello World");
+
+onsole.log("Hello World");
+
+
+var age = prompt("what is your age?")
+console.log(age);
+
+
