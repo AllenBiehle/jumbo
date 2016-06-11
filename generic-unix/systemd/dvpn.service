@@ -1,0 +1,15 @@
+[Unit]
+Description=OpenVPN Docker Container
+Requires=docker.service
+After=docker.service
+
+[Service]
+Restart=always
+#ExecStartPre=/usr/bin/docker stop vpn
+#ExecStartPre=/usr/bin/docker rm vpn
+ExecStart=/usr/bin/docker run --rm -p 1194:1194/udp --name vpn --volumes-from ovpn-data --cap-add=NET_ADMIN  kylemanna/openvpn
+ExecReload=/usr/bin/docker stop && /usr/bin/docker run --name vpn --volumes-from ovpn-data --rm -p 1194:1194/udp --cap-add=NET_ADMIN kylemanna/openvpn
+ExecStop=/usr/bin/docker stop vpn
+
+[Install]
+WantedBy=local.target
